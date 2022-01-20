@@ -7,8 +7,9 @@ Welcome to participate in this test. Please read the following information and c
 
 1. Fix the exiting bugs for this Note Taking application
 2. Convert the entire project to TypeScript
-3. Beautify the app with any approach if it is feasible for you. (Optional)
+3. Beautify the app with any approach if it is feasible for you. 
 4. Share you repo with the working version of this app to us
+5. Convert to an React App would be a bonus (Optional)
 
 ## About
 A Notes App built with vanilla JavaScript and Local Storage.
