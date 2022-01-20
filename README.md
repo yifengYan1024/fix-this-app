@@ -1,22 +1,23 @@
 # Note Taking Application
 
-Welcome to participate in this test. Please read a bit the following information and complete the tasks in the below section.
+Welcome to participate in this test. Please read the following information and complete the tasks below.
 
-## Tasks for Candidates
+## Tasks
 
-0. Folk this repo
-1. Fix the current exiting bugs in this notes app
-(bonus) Convert the entire project to TypeScript if it is feasible for yous
-2. Share you repo with the working version of this app to us
+
+1. Fix the exiting bugs for this Note Taking application
+2. Convert the entire project to TypeScript
+3. Beautify the app with any approach if it is feasible for you. (Optional)
+4. Share you repo with the working version of this app to us
 
 ## About
 A Notes App built with vanilla JavaScript and Local Storage.
-## Get to Start the Dev
+## How to Start Development
 
 
 ```zsh
 npm install
-npm run dev
+npm run develop
 ```
 
 ## Current Features
