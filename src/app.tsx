@@ -1,5 +1,6 @@
 import NotesView from "./view";
 import NotesAPI from "./api";
+import LoadFile from "./loadFile";
 import React, { Component } from "react";
 
 export default class App extends Component<any, any> {
@@ -14,7 +15,8 @@ export default class App extends Component<any, any> {
     this.state = {
       notes: [],
       view: null,
-      activeNote: null
+      activeNote: null,
+      pageType: 1
     }
   }
 
@@ -22,7 +24,14 @@ export default class App extends Component<any, any> {
     return (
       // <NotesView></NotesView>
       <div>
-        <div id="page" className="node__page">aaa</div>
+        <div className="page-btn-box">
+          <button className="btn" onClick={this._setPageType.bind(this, 1)} style={{backgroundColor:(this.state.pageType==1)?"#008CBA":"#4CAF50" }}>notes</button>
+          <button className="btn" onClick={this._setPageType.bind(this, 2)} style={{backgroundColor:(this.state.pageType==2)?"#008CBA":"#4CAF50" }}>files</button>
+        </div>
+        <div id="page" className="node__page" style={{display:(this.state.pageType==1)?"flex":"none" }}></div>
+        <div style={{display:(this.state.pageType==2)?"flex":"none" }}>
+          <LoadFile></LoadFile>
+        </div>
       </div>
     );
   }
@@ -94,5 +103,10 @@ export default class App extends Component<any, any> {
         this._refreshNotes();
       },
     };
+  }
+
+  _setPageType(pageType:any) {
+    this.setState({ pageType });
+    console.log(this.state.pageType);
   }
 }

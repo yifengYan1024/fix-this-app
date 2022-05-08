@@ -29,7 +29,7 @@ body {
   padding: 1em;
   width: 300px;
   overflow-y: scroll;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 120px);
 }
 
 .notes__add {
@@ -149,4 +149,71 @@ body {
 
 .node__page {
   display: flex;
+  height: calc(100vh - 120px);
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+table td,
+table th {
+  border: 1px solid #cad9ea;
+  color: #666;
+  height: 30px;
+}
+
+table thead th {
+  background-color: #CCE8EB;
+  width: 100px;
+}
+
+table tr:nth-child(odd) {
+  background: #fff;
+}
+
+table tr:nth-child(even) {
+  background: #F5FAFA;
+}
+
+.file-container {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  height: calc(100vh - 120px);
+}
+
+.file-input {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.page-btn-box {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+}
+
+.btn {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
