@@ -15,6 +15,7 @@ export default class NotesView {
               <div class="notes__list"></div>
           </div>
           <div class="notes__preview">
+              <div class="notes__preview-save">Save</div>
               <input class="notes__title" type="text" placeholder="新笔记...">
               <textarea class="notes__body">编辑笔记...</textarea>
           </div>
@@ -23,6 +24,7 @@ export default class NotesView {
     const btnAddNote = this.root.querySelector(".notes__add");
     const inpTitle = this.root.querySelector(".notes__title");
     const inpBody = this.root.querySelector(".notes__body");
+    const btnSave = this.root.querySelector(".notes__preview-save");
 
     btnAddNote.addEventListener("click", () => {
       this.onNoteAdd();
@@ -35,6 +37,11 @@ export default class NotesView {
 
         this.onNoteEdit(updatedTitle, updatedBody);
       });
+    });
+    btnSave.addEventListener("click", () => {
+      const updatedTitle = inpTitle.value.trim();
+      const updatedBody = inpBody.value.trim();
+      this.onNoteEdit(updatedTitle, updatedBody);
     });
 
     this.updateNotePreviewVisibility(false);
@@ -56,11 +63,13 @@ export default class NotesView {
                     timeStyle: "short",
                   })}
               </div>
+              <div class="notes__del-btn"> × </div>
           </div>
       `;
   }
 
   updateNoteList(notes) {
+    console.log(notes);
     const notesListContainer = this.root.querySelector(".notes__list");
 
     // Empty list
@@ -93,6 +102,16 @@ export default class NotesView {
           }
         });
       });
+      notesListContainer
+      .querySelectorAll(".notes__del-btn").forEach((btnItem) => {
+        btnItem.addEventListener("click", () => {
+          const doDelete = confirm("确认要删除该笔记吗?");
+          if (doDelete) {
+            console.log(btnItem.parentNode.dataset.noteId);
+            this.onNoteDelete(btnItem.parentNode.dataset.noteId);
+          }
+        });
+      })
   }
 
   updateActiveNote(note) {

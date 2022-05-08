@@ -41,19 +41,17 @@ export default class App extends Component<any, any> {
     this._setNotes(notes);
 
     if (notes.length > 0) {
+      console.log(notes, notes[0]);
       this._setActiveNote(notes[0]);
     }
   }
 
   _setNotes(notes: any) {
     // this.notes = notes;
-    this.setState(state => {
-      return {
-        notes: notes
-      }
+    this.setState({ notes }, () => {
+      this.state.view.updateNoteList(notes);
+      this.state.view.updateNotePreviewVisibility(notes.length > 0);
     });
-    this.state.view.updateNoteList(notes);
-    this.state.view.updateNotePreviewVisibility(notes.length > 0);
   }
 
   _setActiveNote(note: any) {
@@ -68,8 +66,10 @@ export default class App extends Component<any, any> {
     return {
       onNoteSelect: (noteId:any) => {
         const selectedNote = this.state.notes.find((note: any) => note.id === noteId * 1);
-        console.log(this.state.notes, noteId);
-        this._setActiveNote(selectedNote);
+        console.log(this.state.notes, noteId, selectedNote);
+        if (selectedNote) {
+          this._setActiveNote(selectedNote);
+        }
       },
       onNoteAdd: () => {
         const newNote = {
