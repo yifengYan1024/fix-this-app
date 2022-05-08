@@ -3,6 +3,7 @@ export default class NotesView {
     root,
     { onNoteSelect, onNoteAdd, onNoteEdit, onNoteDelete } = {}
   ) {
+    console.log(root, 888);
     this.root = root;
     this.onNoteSelect = onNoteSelect;
     this.onNoteAdd = onNoteAdd;

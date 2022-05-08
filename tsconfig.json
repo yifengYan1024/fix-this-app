@@ -12,7 +12,10 @@
     "noEmit": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitReturns": true
+    "noImplicitReturns": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "allowJs": true
   },
   "include": ["./src"]
 }

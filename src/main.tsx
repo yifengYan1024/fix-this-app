@@ -1,5 +1,8 @@
-import App from "./app.js";
+import App from "./app";
+// import NotesView from "./view.js";
 import "./style.css";
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 // const app = document.querySelector<HTMLDivElement>('#app')!
 
@@ -9,4 +12,5 @@ import "./style.css";
 // `
 
 const root = document.getElementById("app");
-new App(root);
+// new App(root);
+ReactDOM.createRoot(root!).render(<App/>);
